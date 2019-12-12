@@ -9,5 +9,7 @@ if(!$_SESSION['loggedIn']){
     header('Location: /anthony1/phprouter/login');
 } else if($_SESSION['level'] !== 'admin'){
     echo 'You are not an admin';
+} else{
+  header('Location: /anthony1/phprouter');
 }
 ?>
