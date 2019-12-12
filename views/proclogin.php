@@ -12,13 +12,13 @@ function checklogin()
 	# VALIDATE THIS YOU MORON!!
 	$email = $_POST['username'];
 	$userpassword = $_POST['loginpass'];
-	
+
 	$db1 = new mysqli('localhost', 'anthony1', $password, 'STUanthony1');
 	if($db1->connect_errno > 0)
 	{
 		die('Unable to connect to database [' . $db1->connect_error . ']');
 	}
-	
+
 	$query1 = $db1->prepare("select hashpw from grcustomers where email = ?");
 	$query1->bind_param('s',$email);
 
@@ -33,6 +33,8 @@ function checklogin()
 		if (password_verify($userpassword, $hashedpw))
 		{
 			echo "You have logged in successfully";
+      $_SESSION['loggedIn'] = true;
+			$_SESSION['level'] = $status;
 		}
 		else
 		{
@@ -43,7 +45,7 @@ function checklogin()
 	{
 		echo "user not found";
 	}
-	
+
 
 }
 checklogin();
