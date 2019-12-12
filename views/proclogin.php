@@ -27,7 +27,7 @@ function checklogin()
 	$userexists = $query1->num_rows;
 	if ($userexists == 1 )
 	{
-		$query1->bind_result($hashedpw);
+		$query1->bind_result($hashedpw, $status);
 		$row = $query1->fetch();
 		$query1->free_result();
 		if (password_verify($userpassword, $hashedpw))
