@@ -22,6 +22,7 @@ if(!defined('Canary'))
 <li><a href="search/byauthor">Search by Author</a></li>
 <li><a href="search/bytitle">Search by Title</a></li>
 <li><a href="search/byisbn">Search By Isbn</a></li>
+<li><a href="useradmin">User Admin </a></li>
 </ul>
 
 </body>
