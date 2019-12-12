@@ -8,7 +8,7 @@ if (basename($_SERVER['SCRIPT_NAME']) == basename(__FILE__))
 function checklogin()
 {
 	include_once '/home/stu/anthony1/blurg.inc.php';
-	include_once '../inc/passwordfuncs.inc.php';
+	include_once 'inc/passwordfuncs.inc.php';
 	# VALIDATE THIS YOU MORON!!
 	$email = $_POST['username'];
 	$userpassword = $_POST['loginpass'];
